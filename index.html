@@ -1,143 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monte Seu Bolo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monte seu Bolo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" />
   <style>
-    :root {
-      --gold: #D4AF37;
-      --brown: #5C2E00;
-      --black: #1C1C1C;
-      --light-bg: #F8F5F0;
-      --modal-bg: #ffffff;
-    }
-
-    * {
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #f2dfce;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background-color: var(--light-bg);
-      color: var(--black);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
+      color: #401404;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
+      text-align: center;
+      padding: 2rem;
+      background: #a67951;
+      color: white;
     }
 
-    header img {
-      width: 40px;
-      height: 40px;
+    .container {
+      text-align: center;
+      padding: 2rem;
     }
 
-    h1 {
-      font-size: 2rem;
-      color: var(--brown);
-    }
-
-    .cta-btn {
-      background-color: var(--gold);
-      color: var(--black);
+    button {
+      background-color: #a67951;
       border: none;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-size: 1.1rem;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 1.5rem;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, background-color 0.3s;
+      transition: background 0.3s ease;
+      margin-top: 1.5rem;
     }
 
-    .cta-btn:hover {
-      transform: scale(1);
-      background-color: #caa432;
-    }
-
-    /* Modal Overlay */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.4);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
+    button:hover {
+      background-color: #733917;
     }
 
     .modal {
-      background-color: var(--modal-bg);
-      padding: 2rem;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal h2 {
-      margin-bottom: 1rem;
-      color: var(--brown);
-    }
-
-    .modal label {
-      display: block;
-      margin: 1rem 0 0.5rem;
-      font-weight: 600;
-    }
-
-    .modal select {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
       width: 100%;
-      padding: 0.6rem;
-      border-radius: 8px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    select {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      border-radius: 1rem;
       border: 1px solid #ccc;
     }
 
-    .price {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: var(--brown);
+    .next-btn {
+      margin-top: 1.5rem;
     }
 
-    .close-btn {
-      background-color: transparent;
-      border: none;
-      color: var(--black);
-      font-size: 1.2rem;
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
+    .price-box {
+      background-color: #f2dfce;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-weight: bold;
+      border-radius: 1rem;
+      color: #732407;
+    }
+
+    .summary {
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .restart-btn {
+      margin-top: 1.5rem;
+      background: #401404;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: scale(0.95);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
       }
     }
   </style>
@@ -146,123 +123,143 @@
 <body>
 
   <header>
-    <img src="https://img.icons8.com/?size=100&id=87323&format=png&color=000000" alt="Ícone de bolo">
-    <h1>Monte Seu Bolo</h1>
+    <h1>Crie o bolo perfeito para qualquer ocasião</h1>
   </header>
 
-  <button class="cta-btn" onclick="openModal()">Monte seu bolo</button>
+  <div class="container">
+    <p>Escolha o sabor ideal, o tamanho perfeito e veja o preço na hora!</p>
+    <button onclick="openModal()">Começar a Montar 🍰</button>
+  </div>
 
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <button class="close-btn" onclick="closeModal()">×</button>
-      <h2>Escolha seu sabor</h2>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <!-- Etapa 1: Escolher sabor -->
+      <div class="step active" id="step1">
+        <h2>Escolha o sabor</h2>
+        <select id="sabor" onchange="updateSabor()">
+          <option value="" disabled selected hidden>Selecione um sabor</option>
+          <optgroup label="Tradicionais">
+            <option value="Goiabada">Goiabada</option>
+            <option value="Bananada">Bananada</option>
+            <option value="Goiabada com cobertura">Goiabada com cobertura</option>
+          </optgroup>
+          <optgroup label="Gourmet">
+            <option value="Café">Café</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Doce de leite">Doce de leite</option>
+            <option value="Ninho">Ninho</option>
+            <option value="Limão">Limão</option>
+            <option value="Maracujá">Maracujá</option>
+          </optgroup>
+          <optgroup label="Gourmet Especial">
+            <option value="Red velvet">Red velvet</option>
+            <option value="Panetone">Panetone</option>
+            <option value="Doce de leite com ameixa">Doce de leite com ameixa</option>
+            <option value="Sensação">Sensação</option>
+            <option value="Napolitano">Napolitano</option>
+            <option value="Chocolatudo">Chocolatudo</option>
+            <option value="Oreo">Oreo</option>
+          </optgroup>
+        </select>
+        <button class="next-btn" onclick="nextStep(2)">Próximo</button>
+      </div>
 
-      <label for="sabor">Sabor:</label>
-      <select id="sabor" onchange="handleSaborChange()">
-        <option value="">-- Selecione um sabor --</option>
-        <option value="goiabada">Goiabada</option>
-        <option value="bananada">Bananada</option>
-        <option value="goiabada-cobertura">Goiabada com Cobertura</option>
-      </select>
-
-      <div id="pesoSection" style="display:none;">
-        <label for="peso">Peso:</label>
-        <select id="peso" onchange="atualizarPreco()">
-          <option value="">-- Selecione o peso --</option>
+      <!-- Etapa 2: Escolher peso -->
+      <div class="step" id="step2">
+        <h2>Escolha o peso</h2>
+        <select id="peso" onchange="updateResumo()">
           <option value="1kg">1kg</option>
           <option value="0.5kg">1/2kg</option>
         </select>
+        <button class="next-btn" onclick="nextStep(3)">Ver Resumo</button>
       </div>
 
-      <div class="price" id="preco"></div>
-      <!-- novo resumo da escolha -->
-      <div id="resumo" style="margin-top: 1rem; display: none; color: var(--black);">
-        <p><strong>Sabor:</strong> <span id="resumoSabor"></span></p>
-        <p><strong>Peso:</strong> <span id="resumoPeso"></span></p>
-        <p><strong>Preço:</strong> R$ <span id="resumoPreco"></span></p>
+      <!-- Etapa 3: Resumo -->
+      <div class="step" id="step3">
+        <h2>Resumo do seu bolo</h2>
+        <div class="summary" id="resumoFinal"></div>
+        <div class="price-box" id="precoFinal"></div>
+        <button class="restart-btn" onclick="reiniciar()">Montar outro bolo</button>
       </div>
-
-      <!-- botão de montar -->
-      <button class="cta-btn" style="margin-top: 1.1rem;" onclick="montarBolo()">Montar Bolo</button>
-
-      <!-- mensagem de sucesso -->
-      <p id="mensagemFinal" style="margin-top: 1rem; font-weight: 600; color: green; display: none;">
-        🎉 Seu bolo foi montado com sucesso!
-      </p>
     </div>
   </div>
 
   <script>
-    const modalOverlay = document.getElementById('modalOverlay');
-    const pesoSection = document.getElementById('pesoSection');
-    const precoDiv = document.getElementById('preco');
+    const modal = document.getElementById("modal");
+    const steps = document.querySelectorAll(".step");
+    const resumo = document.getElementById("resumoFinal");
+    const preco = document.getElementById("precoFinal");
 
     const precos = {
-      "goiabada": { "1kg": 48, "0.5kg": 25 },
-      "bananada": { "1kg": 48, "0.5kg": 25 },
-      "goiabada-cobertura": { "1kg": 53, "0.5kg": 30 }
+      "Goiabada": { "1kg": 48, "0.5kg": 25 },
+      "Bananada": { "1kg": 48, "0.5kg": 25 },
+      "Goiabada com cobertura": { "1kg": 53, "0.5kg": 30 },
+      "Café": { "1kg": 65, "0.5kg": 35 },
+      "Chocolate": { "1kg": 65, "0.5kg": 35 },
+      "Doce de leite": { "1kg": 65, "0.5kg": 35 },
+      "Ninho": { "1kg": 65, "0.5kg": 35 },
+      "Limão": { "1kg": 65, "0.5kg": 35 },
+      "Maracujá": { "1kg": 65, "0.5kg": 35 },
+      "Red velvet": { "1kg": 68, "0.5kg": 40 },
+      "Panetone": { "1kg": 75, "0.5kg": 45 },
+      "Doce de leite com ameixa": { "1kg": 70 },
+      "Sensação": { "1kg": 68, "0.5kg": 40 },
+      "Napolitano": { "1kg": 68, "0.5kg": 40 },
+      "Chocolatudo": { "1kg": 70, "0.5kg": 40 },
+      "Oreo": { "1kg": 68, "0.5kg": 40 }
     };
 
     function openModal() {
-      modalOverlay.style.display = 'flex';
+      modal.style.display = "flex";
     }
 
-    function closeModal() {
-      modalOverlay.style.display = 'none';
-      document.getElementById('sabor').value = '';
-      document.getElementById('peso').value = '';
-      pesoSection.style.display = 'none';
-      precoDiv.textContent = '';
-    }
-
-    function handleSaborChange() {
-      const sabor = document.getElementById('sabor').value;
-      if (sabor) {
-        pesoSection.style.display = 'block';
-      } else {
-        pesoSection.style.display = 'none';
-        precoDiv.textContent = '';
-      }
-    }
-
-    function atualizarPreco() {
-      const sabor = document.getElementById('sabor').value;
-      const peso = document.getElementById('peso').value;
-      if (sabor && peso) {
-        const preco = precos[sabor][peso];
-        precoDiv.textContent = `Preço: R$ ${preco.toFixed(2).replace('.', ',')}`;
-      } else {
-        precoDiv.textContent = '';
-      }
-    }
-    function montarBolo() {
-      const sabor = document.getElementById('sabor').value;
-      const peso = document.getElementById('peso').value;
-
-      if (!sabor || !peso) {
-        alert("Por favor, escolha um sabor e um peso!");
+    function nextStep(n) {
+      const saborSelecionado = document.getElementById("sabor").value;
+      if (n === 2 && !saborSelecionado) {
+        alert("Por favor, selecione um sabor antes de continuar.");
         return;
       }
-
-      const preco = precos[sabor][peso];
-      document.getElementById('resumoSabor').textContent = traduzirSabor(sabor);
-      document.getElementById('resumoPeso').textContent = peso === "1kg" ? "1kg" : "1/2kg";
-      document.getElementById('resumoPreco').textContent = preco.toFixed(2).replace('.', ',');
-
-      document.getElementById('resumo').style.display = 'block';
-      document.getElementById('mensagemFinal').style.display = 'block';
+      steps.forEach((step) => step.classList.remove("active"));
+      document.getElementById("step" + n).classList.add("active");
+      if (n === 3) updateResumo();
     }
 
-    function traduzirSabor(sabor) {
-      switch (sabor) {
-        case "goiabada": return "Goiabada";
-        case "bananada": return "Bananada";
-        case "goiabada-cobertura": return "Goiabada com Cobertura";
-        default: return sabor;
+    function updateSabor() {
+      const sabor = document.getElementById("sabor").value;
+      const pesoSelect = document.getElementById("peso");
+      if (!precos[sabor]?.["0.5kg"]) {
+        pesoSelect.innerHTML = `<option value="1kg">1kg</option>`;
+      } else {
+        pesoSelect.innerHTML = `
+          <option value="1kg">1kg</option>
+          <option value="0.5kg">1/2kg</option>`;
       }
     }
 
+    function updateResumo() {
+      const sabor = document.getElementById("sabor").value;
+      const peso = document.getElementById("peso").value;
+      const valor = precos[sabor][peso];
+      resumo.innerHTML = `
+        <p><strong>Sabor:</strong> ${sabor}</p>
+        <p><strong>Peso:</strong> ${peso}</p>
+      `;
+      preco.textContent = `Total: R$ ${valor.toFixed(2).replace(".", ",")}`;
+    }
 
+    function reiniciar() {
+      document.getElementById("sabor").value = "";
+      document.getElementById("peso").value = "1kg";
+      updateSabor();
+      nextStep(1);
+    }
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+        reiniciar();
+      }
+    };
   </script>
 
 </body>
