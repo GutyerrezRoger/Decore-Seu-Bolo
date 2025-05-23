@@ -1,76 +1,93 @@
-# Decore-Seu-Bolo
-
 # 🍰 Monte Seu Bolo
 
-Um site interativo e responsivo que permite ao usuário montar seu próprio bolo de forma simples, rápida e visual.  
-Este projeto tem como objetivo facilitar a escolha de sabores, tamanhos e visualização de preços para bolos artesanais.
+Uma plataforma interativa e moderna onde o usuário pode montar seu bolo de rolo personalizado escolhendo tipo, sabor e tamanho, com visual atualizado, feedback dinâmico e foco na experiência do usuário.
 
 ---
 
-## 🎯 Objetivo
+## ✨ Sobre o Projeto
 
-Criar uma experiência agradável e moderna para o cliente escolher e montar seu bolo personalizado, com um sistema dinâmico que atualiza o preço automaticamente de acordo com as escolhas feitas.
-
----
-
-## 🧱 Funcionalidades
-
-- Interface moderna com transições suaves e design responsivo.
-- Modal interativo para escolha do **sabor** e **peso do bolo**.
-- **Preço calculado dinamicamente** com base nas seleções do usuário.
-- Feedback visual com resumo da escolha e mensagem de sucesso.
-- Ícone de bolo estilizado para dar um toque mais convidativo à plataforma.
+O **Monte Seu Bolo** é um site com visual clean e moderno que oferece aos clientes a possibilidade de simular a montagem de um bolo de rolo ideal. A experiência é fluida, personalizada e divertida, permitindo que o usuário visualize os sabores, tamanhos e preços antes de realizar um pedido real.
 
 ---
 
-## 🧁 Sabores disponíveis (Fase MVP)
+## 🚀 Funcionalidades
 
-| Sabor                   | 1kg     | 1/2kg   |
-|-------------------------|---------|---------|
-| Goiabada                | R$48,00 | R$25,00 |
-| Bananada                | R$48,00 | R$25,00 |
-| Goiabada com Cobertura  | R$53,00 | R$30,00 |
-
----
-
-## 🎨 Paleta de Cores
-
-- **Dourado**
-- **Preto**
-- **Marrom (brigadeiro)**
-- Fundo claro para melhor contraste visual
+- ✅ Página inicial com visual atrativo e chamada envolvente.
+- ✅ Modal estilizado com cantos arredondados e sombra suave.
+- ✅ Ícone de bolo para reforçar a identidade visual.
+- ✅ Transições suaves entre etapas da montagem.
+- ✅ Escolha do tipo de bolo:
+  - Tradicional
+  - Gourmet
+  - Gourmet Especial
+- ✅ Seleção de sabor e tamanho (1kg ou 1/2kg), com preço automático.
+- ✅ Resumo do pedido ao final com todos os dados escolhidos.
+- ✅ Botão para reiniciar a montagem e criar um novo bolo.
+- ✅ Interface responsiva para diversos dispositivos.
 
 ---
 
-## 🚀 Tecnologias Usadas
+## 🧁 Tipos de Bolos Disponíveis
 
-- HTML5
-- CSS3
-- JavaScript (puro, sem frameworks)
-- Icons8 (ícone de bolo)
+### 🎂 Bolos de Rolo Tradicionais
 
----
-
-## 📦 Próximas Fases
-
-- Escolha de coberturas e adicionais
-- Visualização do pedido completo com valor final
-- Opção para envio do pedido via WhatsApp
+| Sabor                    | 1kg     | 1/2kg  |
+|--------------------------|---------|--------|
+| Goiabada                 | R$48,00 | R$25,00 |
+| Bananada                 | R$48,00 | R$25,00 |
+| Goiabada com cobertura   | R$53,00 | R$30,00 |
 
 ---
 
-## 📸 Preview
+### 🍫 Bolos de Rolo Gourmet
 
-> link de demonstração: https://gutyerrezroger.github.io/Decore-Seu-Bolo/
+| Sabor         | 1kg     | 1/2kg  |
+|---------------|---------|--------|
+| Café          | R$65,00 | R$35,00 |
+| Chocolate     | R$65,00 | R$35,00 |
+| Doce de leite | R$65,00 | R$35,00 |
+| Ninho         | R$65,00 | R$35,00 |
+| Limão         | R$65,00 | R$35,00 |
+| Maracujá      | R$65,00 | R$35,00 |
 
 ---
 
-## 🤝 Contribuindo
+### 🎉 Bolos Gourmet Especial
 
-Sinta-se à vontade para abrir *issues*, enviar *pull requests* ou sugerir melhorias!
+| Sabor                        | 1kg     | 1/2kg  |
+|-----------------------------|---------|--------|
+| Red velvet                  | R$68,00 | R$40,00 |
+| Panetone                    | R$75,00 | R$45,00 |
+| Doce de leite com ameixa    | R$70,00 | —       |
+| Sensação                    | R$68,00 | R$40,00 |
+| Napolitano                  | R$68,00 | R$40,00 |
+| Chocolatudo                 | R$70,00 | R$40,00 |
+| Oreo                        | R$68,00 | R$40,00 |
 
 ---
 
-## 📌 Autor
+## 💻 Tecnologias Utilizadas
 
-Desenvolvido por **Guty** – apaixonado por código, design e doces experiências 😄
+- `HTML5`
+- `CSS3` (com design clean e sombreamento leve)
+- `JavaScript` (manipulação do DOM, estados, eventos)
+
+---
+
+## 🎯 Público-Alvo
+
+Clientes que desejam montar bolos personalizados de forma rápida, visual e divertida, com clareza nos preços e nas opções disponíveis.
+
+---
+
+## 📌 Em Desenvolvimento Futuro
+
+- Integração com backend ou planilhas para registrar pedidos
+- Geração de link compartilhável do bolo montado
+- Melhorias em acessibilidade e animações
+
+---
+
+## 🔄 Faça uso do projeto
+
+> https://gutyerrezroger.github.io/Decore-Seu-Bolo/
