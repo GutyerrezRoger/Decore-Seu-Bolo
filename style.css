@@ -89,12 +89,17 @@ select {
 
 .price-box {
   background-color: var(--cor-fundo);
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
   font-weight: bold;
   border-radius: 1rem;
   color: var(--cor-destaque);
+  font-size: 1.5rem;
+  border: 2px solid var(--cor-principal);
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
 
 .summary {
   text-align: left;
@@ -143,4 +148,5 @@ select {
     padding: 1.5rem;
   }
 }
+
 
