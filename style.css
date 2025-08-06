@@ -118,3 +118,29 @@ select {
   }
 }
 
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 1rem; 
+  }
+
+  button {
+    width: 100%; 
+    padding: 1rem 0;
+    font-size: 1.1rem; 
+  }
+
+  select {
+    font-size: 1rem; 
+    padding: 0.8rem;
+  }
+
+  .modal-content {
+    width: 95%; 
+    padding: 1.5rem;
+  }
+}
+
