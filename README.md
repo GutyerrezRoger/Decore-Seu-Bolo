@@ -2,6 +2,8 @@
 
 Projeto de um site interativo para permitir que usuários montem bolos personalizados, escolhendo sabores, camadas, coberturas e acompanhamentos. A aplicação fornece uma estimativa de preço em tempo real com uma interface intuitiva e visual agradável.
 
+https://gutyerrezroger.github.io/Decore-Seu-Bolo
+
 ## 🚀 Objetivo
 
 Criar uma experiência de navegação fluida e agradável para quem deseja montar um bolo sob medida, seja para festas, eventos ou consumo pessoal. O foco está na usabilidade, design gourmet e feedback visual imediato.
