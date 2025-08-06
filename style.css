@@ -1,15 +1,24 @@
+:root {
+  --cor-fundo: #f2dfce;
+  --cor-principal: #a67951;
+  --cor-principal-escuro: #733917;
+  --cor-texto: #401404;
+  --cor-destaque: #732407;
+  --cor-botao-reset: #401404;
+}
+
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #f2dfce;
+  background: var(--cor-fundo);
   margin: 0;
   padding: 0;
-  color: #401404;
+  background: var(--cor-fundo);
 }
 
 header {
   text-align: center;
   padding: 2rem;
-  background: #a67951;
+  background: var(--cor-principal);
   color: white;
 }
 
@@ -19,7 +28,7 @@ header {
 }
 
 button {
-  background-color: #a67951;
+  background-color: var(--cor-principal);
   border: none;
   color: white;
   padding: 0.8rem 1.5rem;
@@ -31,7 +40,7 @@ button {
 }
 
 button:hover {
-  background-color: #733917;
+  background-color: var(--cor-principal-escuro);
 }
 
 .modal {
@@ -79,12 +88,12 @@ select {
 }
 
 .price-box {
-  background-color: #f2dfce;
+  background-color: var(--cor-fundo);
   padding: 1rem;
   margin-top: 1rem;
   font-weight: bold;
   border-radius: 1rem;
-  color: #732407;
+  color: var(--cor-destaque);
 }
 
 .summary {
@@ -94,7 +103,7 @@ select {
 
 .restart-btn {
   margin-top: 1.5rem;
-  background: #401404;
+  background: var(--cor-botao-reset);
 }
 
 @keyframes fadeIn {
@@ -108,3 +117,4 @@ select {
     transform: scale(1);
   }
 }
+
