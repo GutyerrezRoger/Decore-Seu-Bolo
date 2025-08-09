@@ -1,75 +1,75 @@
-const modal = document.getElementById("modal");
-const steps = document.querySelectorAll(".step");
-const resumo = document.getElementById("resumoFinal");
-const preco = document.getElementById("precoFinal");
+// script.js
 
-const precos = {
-  "Goiabada": { "1kg": 48, "0.5kg": 25 },
-  "Bananada": { "1kg": 48, "0.5kg": 25 },
-  "Goiabada com cobertura": { "1kg": 53, "0.5kg": 30 },
-  "Café": { "1kg": 65, "0.5kg": 35 },
-  "Chocolate": { "1kg": 65, "0.5kg": 35 },
-  "Doce de leite": { "1kg": 65, "0.5kg": 35 },
-  "Ninho": { "1kg": 65, "0.5kg": 35 },
-  "Limão": { "1kg": 65, "0.5kg": 35 },
-  "Maracujá": { "1kg": 65, "0.5kg": 35 },
-  "Red velvet": { "1kg": 68, "0.5kg": 40 },
-  "Panetone": { "1kg": 75, "0.5kg": 45 },
-  "Doce de leite com ameixa": { "1kg": 70 },
-  "Sensação": { "1kg": 68, "0.5kg": 40 },
-  "Napolitano": { "1kg": 68, "0.5kg": 40 },
-  "Chocolatudo": { "1kg": 70, "0.5kg": 40 },
-  "Oreo": { "1kg": 68, "0.5kg": 40 }
-};
-
+// Abrir e fechar modal
 function openModal() {
-  modal.style.display = "flex";
+  document.getElementById("cakeWizard").style.display = "flex";
 }
 
-function nextStep(n) {
-  const saborSelecionado = document.getElementById("sabor").value;
-  if (n === 2 && !saborSelecionado) {
-    alert("Por favor, selecione um sabor antes de continuar.");
-    return;
-  }
-  steps.forEach((step) => step.classList.remove("active"));
-  document.getElementById("step" + n).classList.add("active");
-  if (n === 3) updateResumo();
+function closeModal() {
+  document.getElementById("cakeWizard").style.display = "none";
 }
 
-function updateSabor() {
-  const sabor = document.getElementById("sabor").value;
-  const pesoSelect = document.getElementById("peso");
-  if (!precos[sabor]?.["0.5kg"]) {
-    pesoSelect.innerHTML = `<option value="1kg">1kg</option>`;
-  } else {
-    pesoSelect.innerHTML = `
-      <option value="1kg">1kg</option>
-      <option value="0.5kg">1/2kg</option>`;
-  }
+// Controle de passos
+let currentStep = 1;
+const steps = document.querySelectorAll(".step");
+
+function showStep(stepNumber) {
+  steps.forEach((step, index) => {
+    step.classList.toggle("active", index === stepNumber - 1);
+  });
+  currentStep = stepNumber;
 }
 
+// Botões "Próximo"
+document.querySelectorAll(".next-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep < steps.length) {
+      showStep(currentStep + 1);
+    }
+  });
+});
+
+// Botões "Voltar"
+document.querySelectorAll(".prev-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep > 1) {
+      showStep(currentStep - 1);
+    }
+  });
+});
+
+// Botão "Recomeçar"
+document.querySelectorAll(".restart-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("massa").value = "";
+    document.getElementById("recheio").value = "";
+    document.getElementById("cobertura").value = "";
+    document.getElementById("peso").value = "";
+    document.getElementById("resumoFinal").innerHTML = "";
+    document.getElementById("precoFinal").textContent = "0,00";
+    showStep(1);
+  });
+});
+
+// Atualiza resumo e preço no passo 4
 function updateResumo() {
-  const sabor = document.getElementById("sabor").value;
+  const massa = document.getElementById("massa").value;
+  const recheio = document.getElementById("recheio").value;
+  const cobertura = document.getElementById("cobertura").value;
   const peso = document.getElementById("peso").value;
-  const valor = precos[sabor][peso];
-  resumo.innerHTML = `
-    <p><strong>Sabor:</strong> ${sabor}</p>
-    <p><strong>Peso:</strong> ${peso}</p>
+
+  let preco = 0;
+  if (peso === "0.5kg") preco = 30;
+  if (peso === "1kg") preco = 55;
+  if (peso === "2kg") preco = 100;
+
+  const resumoHTML = `
+    <p><strong>Massa:</strong> ${massa || "Não selecionado"}</p>
+    <p><strong>Recheio:</strong> ${recheio || "Não selecionado"}</p>
+    <p><strong>Cobertura:</strong> ${cobertura || "Não selecionado"}</p>
+    <p><strong>Peso:</strong> ${peso || "Não selecionado"}</p>
   `;
-  preco.textContent = `Total: R$ ${valor.toFixed(2).replace(".", ",")}`;
-}
 
-function reiniciar() {
-  document.getElementById("sabor").value = "";
-  document.getElementById("peso").value = "1kg";
-  updateSabor();
-  nextStep(1);
+  document.getElementById("resumoFinal").innerHTML = resumoHTML;
+  document.getElementById("precoFinal").textContent = preco.toFixed(2).replace(".", ",");
 }
-
-window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-    reiniciar();
-  }
-};
