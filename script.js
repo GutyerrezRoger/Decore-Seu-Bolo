@@ -23,6 +23,16 @@ function showStep(stepNumber) {
 // Botões "Próximo"
 document.querySelectorAll(".next-btn").forEach(btn => {
   btn.addEventListener("click", () => {
+    // Exemplo para o Passo 1
+    if (currentStep === 1) {
+      const massaSelecionada = document.getElementById("massa").value;
+      if (massaSelecionada === "") {
+        alert("Por favor, selecione uma massa.");
+        return; // Impede o avanço do passo
+      }
+    }
+    // Adicione a validação para os outros passos aqui (recheio e cobertura)
+
     if (currentStep < steps.length) {
       showStep(currentStep + 1);
     }
@@ -79,5 +89,6 @@ function updateResumo() {
     priceContainer.style.display = "none";
   }
 }
+
 
 
