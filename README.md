@@ -56,5 +56,5 @@ A paleta foi cuidadosamente selecionada para transmitir sofisticação e estimul
 - **Otimização de Performance:** Lazy loading de imagens e otimizações de código.
 - **Backend:** Integrar com um sistema de login e histórico de pedidos.
 
-## 💖 Feito com
-Feito com 💛 por **Gutyerrez Roger** – Desenvolvedor e Fotógrafo.
+## Feito com 💛 por **Gutyerrez Roger** – Desenvolvedor e Fotógrafo.
+
