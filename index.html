@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +7,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <header>
@@ -20,60 +18,70 @@
     <button onclick="openModal()">Começar a Montar 🍰</button>
   </div>
 
-  <div class="modal" id="modal">
+  <div class="modal" id="cakeWizard">
     <div class="modal-content">
-      <!-- Etapa 1: Escolher sabor -->
-      <div class="step active" id="step1">
-        <h2>Escolha o sabor</h2>
-        <select id="sabor" onchange="updateSabor()">
-          <option value="" disabled selected hidden>Selecione um sabor</option>
-          <optgroup label="Tradicionais">
-            <option value="Goiabada">Goiabada</option>
-            <option value="Bananada">Bananada</option>
-            <option value="Goiabada com cobertura">Goiabada com cobertura</option>
-          </optgroup>
-          <optgroup label="Gourmet">
-            <option value="Café">Café</option>
-            <option value="Chocolate">Chocolate</option>
-            <option value="Doce de leite">Doce de leite</option>
-            <option value="Ninho">Ninho</option>
-            <option value="Limão">Limão</option>
-            <option value="Maracujá">Maracujá</option>
-          </optgroup>
-          <optgroup label="Gourmet Especial">
-            <option value="Red velvet">Red velvet</option>
-            <option value="Panetone">Panetone</option>
-            <option value="Doce de leite com ameixa">Doce de leite com ameixa</option>
-            <option value="Sensação">Sensação</option>
-            <option value="Napolitano">Napolitano</option>
-            <option value="Chocolatudo">Chocolatudo</option>
-            <option value="Oreo">Oreo</option>
-          </optgroup>
+      
+      <!-- Passo 1: Escolher a massa -->
+      <div class="step active" id="step-1">
+        <h2>Escolha a massa</h2>
+        <select id="massa">
+          <option value="">Selecione</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="baunilha">Baunilha</option>
+          <option value="red-velvet">Red Velvet</option>
         </select>
-        <button class="next-btn" onclick="nextStep(2)">Próximo</button>
+        <button class="next-btn">Próximo</button>
       </div>
 
-      <!-- Etapa 2: Escolher peso -->
-      <div class="step" id="step2">
-        <h2>Escolha o peso</h2>
+      <!-- Passo 2: Escolher o recheio -->
+      <div class="step" id="step-2">
+        <h2>Escolha o recheio</h2>
+        <select id="recheio">
+          <option value="">Selecione</option>
+          <option value="brigadeiro">Brigadeiro</option>
+          <option value="doce-de-leite">Doce de leite</option>
+          <option value="morango">Morango</option>
+        </select>
+        <button class="prev-btn">Voltar</button>
+        <button class="next-btn">Próximo</button>
+      </div>
+
+      <!-- Passo 3: Escolher a cobertura -->
+      <div class="step" id="step-3">
+        <h2>Escolha a cobertura</h2>
+        <select id="cobertura">
+          <option value="">Selecione</option>
+          <option value="ganache">Ganache</option>
+          <option value="chantilly">Chantilly</option>
+          <option value="fondant">Fondant</option>
+        </select>
+        <button class="prev-btn">Voltar</button>
+        <button class="next-btn">Próximo</button>
+      </div>
+
+      <!-- Passo 4: Peso + Resumo -->
+      <div class="step" id="step-4">
+        <h2>Resumo do Pedido</h2>
+        
+        <label for="peso">Escolha o peso:</label>
         <select id="peso" onchange="updateResumo()">
-          <option value="1kg">1kg</option>
-          <option value="0.5kg">1/2kg</option>
+          <option value="">Selecione</option>
+          <option value="0.5kg">1/2 kg</option>
+          <option value="1kg">1 kg</option>
+          <option value="2kg">2 kg</option>
         </select>
-        <button class="next-btn" onclick="nextStep(3)">Ver Resumo</button>
+
+        <div class="price-box">Preço: R$ <span id="precoFinal">0,00</span></div>
+
+        <div class="summary" id="resumoFinal"></div>
+
+        <button class="prev-btn">Voltar</button>
+        <button class="restart-btn">Recomeçar</button>
       </div>
 
-      <!-- Etapa 3: Resumo -->
-      <div class="step" id="step3">
-        <h2>Resumo do seu bolo</h2>
-        <div class="summary" id="resumoFinal"></div>
-        <div class="price-box" id="precoFinal"></div>
-        <button class="restart-btn" onclick="reiniciar()">Montar outro bolo</button>
-      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
