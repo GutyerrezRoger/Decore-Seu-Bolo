@@ -57,19 +57,27 @@ function updateResumo() {
   const recheio = document.getElementById("recheio").value;
   const cobertura = document.getElementById("cobertura").value;
   const peso = document.getElementById("peso").value;
-
-  let preco = 0;
-  if (peso === "0.5kg") preco = 30;
-  if (peso === "1kg") preco = 55;
-  if (peso === "2kg") preco = 100;
-
-  const resumoHTML = `
+  
+  // Atualiza resumo do pedido
+  document.querySelector(".summary").innerHTML = `
     <p><strong>Massa:</strong> ${massa || "Não selecionado"}</p>
     <p><strong>Recheio:</strong> ${recheio || "Não selecionado"}</p>
     <p><strong>Cobertura:</strong> ${cobertura || "Não selecionado"}</p>
     <p><strong>Peso:</strong> ${peso || "Não selecionado"}</p>
   `;
 
-  document.getElementById("resumoFinal").innerHTML = resumoHTML;
-  document.getElementById("precoFinal").textContent = preco.toFixed(2).replace(".", ",");
+  // Controle de exibição do preço
+  const priceContainer = document.getElementById("price-container");
+  
+  if (peso) {
+    let preco = 0;
+    if (peso === "1kg") preco = 60;
+    if (peso === "0.5kg") preco = 35;
+    priceContainer.innerText = `Preço: R$ ${preco.toFixed(2)}`;
+    priceContainer.style.display = "block";
+  } else {
+    priceContainer.style.display = "none";
+  }
 }
+
+
