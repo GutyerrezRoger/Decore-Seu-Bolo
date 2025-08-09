@@ -12,7 +12,8 @@ body {
   background: var(--cor-fundo);
   margin: 0;
   padding: 0;
-  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
 }
 
 header {
@@ -22,9 +23,25 @@ header {
   color: white;
 }
 
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--cor-destaque);
+}
+
 .container {
   text-align: center;
   padding: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
 }
 
 button {
@@ -33,14 +50,21 @@ button {
   color: white;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
+  font-weight: 600;
   border-radius: 1.5rem;
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 button:hover {
   background-color: var(--cor-principal-escuro);
+}
+
+button:focus {
+  outline: 2px solid var(--cor-principal-escuro);
+  outline-offset: 2px;
 }
 
 .modal {
@@ -51,7 +75,7 @@ button:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
 }
@@ -62,12 +86,13 @@ button:hover {
   padding: 2rem;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .step {
   display: none;
+  animation: slideIn 0.4s ease-out;
 }
 
 .step.active {
@@ -77,13 +102,27 @@ button:hover {
 select {
   width: 100%;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   border-radius: 1rem;
   border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23733917%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.1L146.2%20202.7%2018.4%2074.5a17.6%2017.6%200%200%200-25%2025l129.5%20129.5a17.6%2017.6%200%200%200%2025%200l129.5-129.5a17.6%2017.6%200%200%200%200-25%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.8rem;
+  padding-right: 2.5rem;
+  transition: border-color 0.3s ease;
 }
 
-.next-btn {
+select:hover, select:focus {
+  border-color: var(--cor-principal);
+  outline: none;
+}
+
+.next-btn, .prev-btn {
   margin-top: 1.5rem;
 }
 
@@ -98,12 +137,21 @@ select {
   border: 2px solid var(--cor-principal);
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
+.price-box.show {
+  opacity: 1;
+}
 
 .summary {
   text-align: left;
   margin-top: 1rem;
+}
+
+.summary p strong {
+  color: var(--cor-principal-escuro);
 }
 
 .restart-btn {
@@ -112,41 +160,21 @@ select {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-
-  header {
-    padding: 1rem; 
-  }
-
-  button {
-    width: 100%; 
-    padding: 1rem 0;
-    font-size: 1.1rem; 
-  }
-
-  select {
-    font-size: 1rem; 
-    padding: 0.8rem;
-  }
-
-  .modal-content {
-    width: 95%; 
-    padding: 1.5rem;
-  }
+  body { font-size: 14px; }
+  header { padding: 1rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  button { width: 100%; padding: 1rem 0; font-size: 1.1rem; }
+  select { font-size: 1rem; padding: 0.8rem; }
+  .modal-content { width: 95%; padding: 1.5rem; }
 }
-
-
