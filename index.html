@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monte seu Bolo</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,37 +18,57 @@
     <button onclick="openModal()">Começar a Montar 🍰</button>
   </div>
 
-<div class="modal-content">
-  <div class="step active" id="step-1">
-    <h2>Escolha o sabor</h2>
-    <select id="sabor">
-      <option value="">Selecione</option>
-      </select>
-    <button class="next-btn">Próximo</button>
-  </div>
+  <div class="modal" id="cakeWizard">
+    <div class="modal-content">
+      
+      <div class="step active" id="step-1">
+        <h2>Escolha o sabor</h2>
+        <select id="sabor">
+          <option value="">Selecione</option>
+          <option value="goiabada">Goiabada</option>
+          <option value="bananada">Bananada</option>
+          <option value="goiabada-com-cobertura">Goiabada c/ cobertura</option>
+          <option value="cafe">Café</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="doce-de-leite">Doce de Leite</option>
+          <option value="ninho">Ninho</option>
+          <option value="limao">Limão</option>
+          <option value="maracuja">Maracujá</option>
+          <option value="red-velvet">Red Velvet</option>
+          <option value="panetone">Panetone</option>
+          <option value="doce-de-leite-com-ameixa">Doce de leite com ameixa</option>
+          <option value="sensacao">Sensação</option>
+          <option value="napolitano">Napolitano</option>
+          <option value="chocolatudo">Chocolatudo</option>
+          <option value="oreo">Oreo</option>
+        </select>
+        <button class="next-btn">Próximo</button>
+      </div>
 
-  <div class="step" id="step-2">
-    <h2>Resumo do Pedido</h2>
-    <label for="peso">Escolha o peso:</label>
-    <select id="peso">
-      <option value="">Selecione</option>
-      <option value="0.5kg">1/2 kg</option>
-      <option value="1kg">1 kg</option>
-      </select>
+      <div class="step" id="step-2">
+        <h2>Resumo do Pedido</h2>
+        
+        <label for="peso">Escolha o peso:</label>
+        <select id="peso">
+          <option value="">Selecione</option>
+          <option value="0.5kg">1/2 kg</option>
+          <option value="1kg">1 kg</option>
+          <option value="2kg">2 kg</option>
+        </select>
 
-    <div id="price-container" style="display:none;" class="price-box">
-      Preço: R$ 0,00
+        <div id="price-container" class="price-box">
+          Preço: R$ 0,00
+        </div>
+
+        <div class="summary" id="resumoFinal"></div>
+
+        <button class="prev-btn">Voltar</button>
+        <button class="restart-btn">Recomeçar</button>
+      </div>
+
     </div>
-
-    <div class="summary" id="resumoFinal"></div>
-
-    <button class="prev-btn">Voltar</button>
-    <button class="restart-btn">Recomeçar</button>
   </div>
-</div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
