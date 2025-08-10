@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,20 +8,50 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header>
     <h1>Crie o bolo perfeito para qualquer ocasião</h1>
   </header>
 
-  <div class="container">
-    <p>Escolha o sabor ideal, o tamanho perfeito e veja o preço na hora!</p>
-    <button onclick="openModal()">Começar a Montar 🍰</button>
-  </div>
+  <main class="container">
+    <p>Conheça nossas criações ou personalize o seu próprio bolo!</p>
+    <button onclick="openModal()">Monte seu Bolo Personalizado 🍰</button>
+
+    <section class="popular-cakes">
+      <h2>Nossos Sabores Mais Populares</h2>
+
+      <div class="cakes-list">
+        <div class="cake-card">
+          <img src="img/bolo1.jpg" alt="Bolo de Chocolate" />
+          <h3>Bolo de Chocolate</h3>
+          <p>Massa fofinha de chocolate com recheio de brigadeiro gourmet.</p>
+          <p class="price">A partir de R$ 35,00</p>
+        </div>
+
+        <div class="cake-card">
+          <img src="img/bolo2.jpg" alt="Bolo Red Velvet" />
+          <h3>Bolo Red Velvet</h3>
+          <p>Massa clássica Red Velvet com cobertura de cream cheese.</p>
+          <p class="price">A partir de R$ 40,00</p>
+        </div>
+
+        <div class="cake-card">
+          <img src="img/bolo3.jpg" alt="Bolo de Café" />
+          <h3>Bolo de Café</h3>
+          <p>Sabor intenso de café com recheio de doce de leite cremoso.</p>
+          <p class="price">A partir de R$ 35,00</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <div class="modal" id="cakeWizard">
     <div class="modal-content">
-      
+      <button class="close-btn" aria-label="Fechar Modal">&times;</button>
+
       <div class="step active" id="step-1">
         <h2>Escolha o sabor</h2>
         <select id="sabor">
@@ -47,7 +78,7 @@
 
       <div class="step" id="step-2">
         <h2>Resumo do Pedido</h2>
-        
+
         <label for="peso">Escolha o peso:</label>
         <select id="peso">
           <option value="">Selecione</option>
@@ -71,4 +102,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

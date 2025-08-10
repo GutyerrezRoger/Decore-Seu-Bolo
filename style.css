@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background: var(--cor-fundo);
   margin: 0;
   padding: 0;
@@ -33,6 +33,8 @@ h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--cor-destaque);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .container {
@@ -40,8 +42,48 @@ h2 {
   padding: 2rem;
 }
 
-p {
+.popular-cakes {
+  margin-top: 3rem;
+}
+
+.cakes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cake-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cake-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.cake-card h3 {
+  font-size: 1.2rem;
+  color: var(--cor-principal-escuro);
+  margin-top: 0;
+}
+
+.cake-card .price {
+  font-weight: bold;
   font-size: 1.1rem;
+  color: var(--cor-destaque);
 }
 
 button {
@@ -55,7 +97,7 @@ button {
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
@@ -88,6 +130,7 @@ button:focus {
   width: 90%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
+  position: relative;
 }
 
 .step {
@@ -97,6 +140,29 @@ button:focus {
 
 .step.active {
   display: block;
+}
+
+/* Novo estilo para o botão de fechar (X) */
+.close-btn {
+  /* Adicione estas três linhas para remover os estilos padrão do botão */
+  background: none;
+  border: none;
+  padding: 0;
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: var(--cor-texto);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--cor-destaque);
+  text-decoration: none;
 }
 
 select {
@@ -109,7 +175,7 @@ select {
   background-color: #fff;
   cursor: pointer;
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23733917%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.1L146.2%20202.7%2018.4%2074.5a17.6%2017.6%200%200%200-25%2025l129.5%20129.5a17.6%2017.6%200%200%200%2025%200l129.5-129.5a17.6%2017.6%200%200%200%200-25%22%2F%3E%3C%2Fsvg%3E');
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23733917%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.1L146.2%20202.7%2018.4%2074.5a17.6%2017.6%200%200%200-25%2025l129.5%20129.5a17.6%2017.6%200%200%200%2025%200l129.5-129.5a17.6%2017.6%200%200%200%200-25%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 0.8rem;
@@ -117,13 +183,10 @@ select {
   transition: border-color 0.3s ease;
 }
 
-select:hover, select:focus {
+select:hover,
+select:focus {
   border-color: var(--cor-principal);
   outline: none;
-}
-
-.next-btn, .prev-btn {
-  margin-top: 1.5rem;
 }
 
 .price-box {
@@ -154,27 +217,55 @@ select:hover, select:focus {
   color: var(--cor-principal-escuro);
 }
 
-.restart-btn {
-  margin-top: 1.5rem;
-  background: var(--cor-botao-reset);
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* NOVO! Estilo para os botões do modal no mobile */
+@media (max-width: 600px) {
+  .modal-actions button {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .price-box {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+/* NOVO! Estilo para o header no mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@media (max-width: 600px) {
-  body { font-size: 14px; }
-  header { padding: 1rem; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  button { width: 100%; padding: 1rem 0; font-size: 1.1rem; }
-  select { font-size: 1rem; padding: 0.8rem; }
-  .modal-content { width: 95%; padding: 1.5rem; }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
