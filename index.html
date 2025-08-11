@@ -7,6 +7,7 @@
   <title>Monte seu Bolo</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
 <body>
@@ -23,26 +24,180 @@
       <h2>Nossos Sabores Mais Populares</h2>
 
       <div class="cakes-list">
-        <div class="cake-card">
+        <div class="cake-card" onclick="openModalWithCake('Bolo-de-rolo-chocolate')">
           <img src="img/bolo1.jpg" alt="Bolo de Chocolate" />
-          <h3>Bolo de Chocolate</h3>
+          <h3>Bolo de Rolo de Chocolate</h3>
           <p>Massa fofinha de chocolate com recheio de brigadeiro gourmet.</p>
           <p class="price">A partir de R$ 35,00</p>
+          <button class="order-btn">Encomende</button>
         </div>
 
-        <div class="cake-card">
+        <div class="cake-card" onclick="openModalWithCake('red-velvet')">
           <img src="img/bolo2.jpg" alt="Bolo Red Velvet" />
           <h3>Bolo Red Velvet</h3>
           <p>Massa clássica Red Velvet com cobertura de cream cheese.</p>
           <p class="price">A partir de R$ 40,00</p>
+          <button class="order-btn">Encomende</button>
         </div>
 
-        <div class="cake-card">
+        <div class="cake-card" onclick="openModalWithCake('Bolo-de-rolo-cafe')">
           <img src="img/bolo3.jpg" alt="Bolo de Café" />
-          <h3>Bolo de Café</h3>
+          <h3>Bolo de rolo de Café</h3>
           <p>Sabor intenso de café com recheio de doce de leite cremoso.</p>
           <p class="price">A partir de R$ 35,00</p>
+          <button class="order-btn">Encomende</button>
         </div>
+      </div>
+    </section>
+
+    <section class="other-flavors-alternated">
+      <h2>Outros Sabores</h2>
+
+      <div class="alternated-grid">
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/goiabada.jpg" alt="Bolo de Goiabada" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Goiabada</h3>
+            <p>Massa leve com recheio cremoso de goiabada.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-goiabada')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/bananada.jpg" alt="Bolo de Bananada" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Bananada</h3>
+            <p>Massa leve com recheio de doce de banana.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-bananada')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/goiabada-com-cobertura.jpg" alt="Bolo de Goiabada com Cobertura" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Goiabada c/ cobertura</h3>
+            <p>Bolo com cobertura de doce de leite ninho.</p>
+            <button class="order-btn" onclick="openModalWithCake('goiabada-com-cobertura')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/doce-de-leite.jpg" alt="Bolo de Doce de Leite" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Doce de Leite</h3>
+            <p>Massa de baunilha com recheio de doce de leite.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-doce-de-leite')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/ninho.jpg" alt="Bolo de Ninho" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Ninho</h3>
+            <p>Massa de leite ninho com recheio cremoso.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-ninho')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/limao.jpg" alt="Bolo de Limão" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Limão</h3>
+            <p>Massa e recheio de limão, refrescante.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-limao')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/maracuja.jpg" alt="Bolo de Maracujá" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Maracujá</h3>
+            <p>Massa com recheio de mousse de maracujá.</p>
+            <button class="order-btn" onclick="openModalWithCake('Bolo-de-rolo-maracuja')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/panetone.jpg" alt="Bolo de Panetone" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Panetone</h3>
+            <p>Bolo de massa fofinha com especiarias.</p>
+            <button class="order-btn" onclick="openModalWithCake('panetone')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/doce-de-leite-com-ameixa.jpg" alt="Bolo de Doce de Leite com Ameixa" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Doce de leite c/ ameixa</h3>
+            <p>Recheio clássico com pedaços de ameixa.</p>
+            <button class="order-btn" onclick="openModalWithCake('doce-de-leite-com-ameixa')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/sensacao.jpg" alt="Bolo Sensação" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Sensação</h3>
+            <p>Recheio de morango e chocolate cremoso.</p>
+            <button class="order-btn" onclick="openModalWithCake('sensacao')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/napolitano.jpg" alt="Bolo Napolitano" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Napolitano</h3>
+            <p>Combinação de morango, chocolate e baunilha.</p>
+            <button class="order-btn" onclick="openModalWithCake('napolitano')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row reversed">
+          <div class="alternated-column alternated-image">
+            <img src="img/chocolatudo.jpg" alt="Bolo Chocolatudo" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Chocolatudo</h3>
+            <p>Para os amantes de chocolate, muito recheio.</p>
+            <button class="order-btn" onclick="openModalWithCake('chocolatudo')">Encomende</button>
+          </div>
+        </div>
+
+        <div class="alternated-row">
+          <div class="alternated-column alternated-image">
+            <img src="img/oreo.jpg" alt="Bolo de Oreo" />
+          </div>
+          <div class="alternated-column alternated-info">
+            <h3>Oreo</h3>
+            <p>Massa e recheio com pedaços crocantes de Oreo.</p>
+            <button class="order-btn" onclick="openModalWithCake('oreo')">Encomende</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -53,53 +208,96 @@
       <button class="close-btn" aria-label="Fechar Modal">&times;</button>
 
       <div class="step active" id="step-1">
-        <h2>Escolha o sabor</h2>
-        <select id="sabor">
-          <option value="">Selecione</option>
-          <option value="goiabada">Goiabada</option>
-          <option value="bananada">Bananada</option>
-          <option value="goiabada-com-cobertura">Goiabada c/ cobertura</option>
-          <option value="cafe">Café</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="doce-de-leite">Doce de Leite</option>
-          <option value="ninho">Ninho</option>
-          <option value="limao">Limão</option>
-          <option value="maracuja">Maracujá</option>
-          <option value="red-velvet">Red Velvet</option>
-          <option value="panetone">Panetone</option>
-          <option value="doce-de-leite-com-ameixa">Doce de leite com ameixa</option>
-          <option value="sensacao">Sensação</option>
-          <option value="napolitano">Napolitano</option>
-          <option value="chocolatudo">Chocolatudo</option>
-          <option value="oreo">Oreo</option>
-        </select>
-        <button class="next-btn">Próximo</button>
+        <h2>Monte seu Bolo Personalizado</h2>
+        <p>Passo 1 de 2: Escolha o sabor e informe os detalhes de contato.</p>
+
+        <div class="form-group">
+          <label for="sabor">Escolha o sabor:</label>
+          <select id="sabor">
+            <option value="">Selecione</option>
+            <option value="Bolo-de-rolo-goiabada">Bolo de rolo: Goiabada</option>
+            <option value="Bolo-de-rolo-bananada">Bolo de rolo: Bananada</option>
+            <option value="goiabada-com-cobertura">Goiabada c/ cobertura</option>
+            <option value="Bolo-de-rolo-cafe">Bolo de rolo: Café</option>
+            <option value="Bolo-de-rolo-chocolate">Bolo de rolo: Chocolate</option>
+            <option value="Bolo-de-rolo-doce-de-leite">Bolo de rolo: Doce de Leite</option>
+            <option value="Bolo-de-rolo-ninho">Bolo de rolo: Ninho</option>
+            <option value="Bolo-de-rolo-limao">Bolo de rolo: Limão</option>
+            <option value="Bolo-de-rolo-maracuja">Bolo de rolo: Maracujá</option>
+            <option value="red-velvet">Naked: Red Velvet</option>
+            <option value="panetone">Naked: Panetone</option>
+            <option value="doce-de-leite-com-ameixa">Naked: Doce de leite com ameixa</option>
+            <option value="sensacao">Naked: Sensação</option>
+            <option value="napolitano">Naked: Napolitano</option>
+            <option value="chocolatudo">Naked: Chocolatudo</option>
+            <option value="oreo">Naked: Oreo</option>
+          </select>
+          <span id="erro-sabor" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="data-entrega">Data para a encomenda:</label>
+          <input type="date" id="data-entrega" name="data-entrega" />
+          <span id="erro-data" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Seu telefone (com DDD):</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" maxlength="15" />
+          <span id="erro-telefone" class="error-message"></span>
+        </div>
+
+        <div class="modal-actions">
+          <button class="next-btn">Próximo</button>
+        </div>
       </div>
 
       <div class="step" id="step-2">
         <h2>Resumo do Pedido</h2>
+        <p>Passo 2 de 2: Confirme o seu pedido.</p>
 
         <label for="peso">Escolha o peso:</label>
         <select id="peso">
           <option value="">Selecione</option>
-          <option value="0.5kg">1/2 kg</option>
-          <option value="1kg">1 kg</option>
-          <option value="2kg">2 kg</option>
         </select>
+        <span id="erro-peso" class="error-message"></span>
 
-        <div id="price-container" class="price-box">
-          Preço: R$ 0,00
-        </div>
-
+        <div id="price-container" class="price-box"> Preço: R$ 0,00</div>
         <div class="summary" id="resumoFinal"></div>
 
-        <button class="prev-btn">Voltar</button>
-        <button class="restart-btn">Recomeçar</button>
+        <div class="modal-actions">
+          <button class="prev-btn">Voltar</button>
+          <button class="restart-btn">Recomeçar</button>
+          <button class="send-btn">Enviar Pedido via WhatsApp</button>
+        </div>
       </div>
-
     </div>
   </div>
-
+  </div>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section contact-info">
+        <h3>Contato</h3>
+        <p>Email: contato@seubolo.com</p>
+        <p>Telefone: (10) 9999999-99</p>
+        <p>Endereço: Sua Rua, 123 - Sua Cidade</p>
+      </div>
+      <div class="footer-section social-media">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/georgiafreitasdoces?igsh=MXZkNWFkOXd0bDF6cw==" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5581988638502" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Docinhos de Mainha. Todos os direitos reservados.</p>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 
