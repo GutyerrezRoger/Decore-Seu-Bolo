@@ -7,7 +7,7 @@ Este é um projeto interativo para um site de confeitaria, permitindo que os usu
 
 ## 🔗 Live Demo
 Confira a aplicação em funcionamento:
-[https://gutyerrezroger.github.io/Decore-Seu-Bolo](https://gutyerrezroger.github.io/Decore-Seu-Bolo)
+https://gutyerrezroger.github.io/Decore-Seu-Bolo
 
 ## 🎯 Objetivo Principal
 O principal objetivo deste projeto é criar uma experiência de navegação fluida e agradável para clientes que desejam um bolo sob medida. O foco está na usabilidade, em um design temático de confeitaria e no feedback visual imediato para cada escolha.
