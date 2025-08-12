@@ -517,7 +517,7 @@ footer {
 
   .alternated-info {
     padding: 2rem;
-    background: white;
+    background: var(--cor-card);
     border-radius: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left; /* NOVO: Garante que o alinhamento do texto seja sempre à esquerda */
