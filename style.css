@@ -1,8 +1,9 @@
 :root {
   --cor-fundo: #401404;
   --cor-principal: #f2a649;
-  --cor-principal-escuro: #181717;
-  --cor-texto: #321105;
+  --cor-principal-escuro: #ffffff;
+  --cor-footer: #181717;
+  --cor-texto: #ffd3c3;
   --cor-card: #672913;
   --cor-destaque: #f2f2f2;
   --cor-botao-reset: #401404;
@@ -357,7 +358,7 @@ select:focus {
 
 /* Documentação: Reduz o padding vertical para diminuir a altura do rodapé. */
 footer {
-  background: var(--cor-principal-escuro);
+  background: var(--cor-footer);
   color: #fff;
   padding: 2rem 0; /* NOVO: Padding reduzido para uma altura mais compacta */
   margin-top: 4rem;
@@ -380,7 +381,7 @@ footer {
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--cor-fundo);
+  color: white;
 }
 
 .footer-section p {
