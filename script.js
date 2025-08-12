@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
 *Sabor:* ${saborTexto}
 *Peso:* ${peso.replace("0.5kg", "1/2 kg")}
 *Data da Encomenda:* ${dataEntrega}
-*Telefone:* ${telefone}
+*Telefone para contato:* ${telefone}
 *Preço Total:* ${preco}
     
 Fico no aguardo do retorno!`;
