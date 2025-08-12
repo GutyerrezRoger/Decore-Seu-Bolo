@@ -229,7 +229,7 @@ button:hover {
 }
 
 .modal-content {
-  background: white;
+  background: #401404;
   border-radius: 1.5rem;
   padding: 2rem;
   max-width: 500px;
